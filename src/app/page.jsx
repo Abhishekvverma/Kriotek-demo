@@ -6,6 +6,7 @@ import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 //import ServiceCard from './components/common/ServiceCard.jsx' ;
 import styled from 'styled-components';
+import Button2 from './components/common/Button2'
 
 
 const Section = styled.section`
@@ -47,18 +48,18 @@ const Input = styled.input`
 `;
 
 
-const Button = styled.button`
-  background-color: ${theme.colors.primary};
-  color: ${theme.colors.light};
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: ${theme.typography.fontWeights.medium};
-  &:hover {
-    background-color: ${theme.colors.accent};
-  }
-`;
+// const Button = styled.button`
+//   background-color: ${theme.colors.primary};
+//   color: ${theme.colors.light};
+//   padding: 0.8rem 2rem;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+//   font-weight: ${theme.typography.fontWeights.medium};
+//   &:hover {
+//     background-color: ${theme.colors.accent};
+//   }
+// `;
 export default function Home() {
   return (
     <div>
@@ -110,7 +111,8 @@ export default function Home() {
         <Input type="text" placeholder="Your Name" required />
         <Input type="email" placeholder="Your Email" required />
         <Input type="text" placeholder="Subject" />
-        <Button type="submit">Send Message</Button>
+        {/* <Button type="submit">Send Message</Button> */}
+        <Button2 type = "submit">Send Message</Button2>
       </ContactForm>
     </Section>
 

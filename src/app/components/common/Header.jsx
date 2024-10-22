@@ -149,7 +149,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <LogoContainer>
-        <img src="public/Original Logo.png" alt="Logo" />
+        <img src="/Original Logo.png" alt="Logo" />
       </LogoContainer>
 
       <NavContainer>
