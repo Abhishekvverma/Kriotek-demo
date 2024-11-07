@@ -1,23 +1,25 @@
-// /components/layout/Header.js
+
 /* eslint-disable @next/next/no-img-element */
 import { useState } from 'react';
 import styled from 'styled-components';
 import theme from '../theme/theme';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll'; 
 
-// Styled components for layout and buttons
+
 const HeaderContainer = styled.header`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: ${theme.colors.light};
-  padding: 1rem 2rem;
+ 
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+  
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -71,11 +73,14 @@ const NavLinks = styled.nav`
     padding: 8px 15px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 
     &:hover {
-     color: ${theme.colors.accent2};
-     border: 1px solid #FE5D5D;
+     color: ${theme.colors.light};
+     
+background-color:${theme.colors.dark};
      box-shadow: 0 4px 12px rgba(254, 93, 93, 0.2);
+     overflow: hidden;
 
     
     border-radius: 20px;
@@ -154,12 +159,24 @@ const Header = () => {
 
       <NavContainer>
         <NavLinks>
-          <Link href="/">Home</Link>
-          <Link href="/about">About us</Link>
-          <Link href="/services">Our services</Link>
-          <Link href="/portfolio">Portfolio</Link>
-          <Link href="/career">Career</Link>
-          <Link href="/contact">Contact us</Link>
+        <ScrollLink to="hero" smooth={true} duration={500}>
+          Home
+        </ScrollLink>
+        <ScrollLink to="about" smooth={true} duration={500}>
+          About Us
+        </ScrollLink>
+        <ScrollLink to="services" smooth={true} duration={500}>
+          Our Services
+        </ScrollLink>
+        <ScrollLink to="portfolio2" smooth={true} duration={500}>
+          Portfolio
+        </ScrollLink>
+        <ScrollLink to="career" smooth={true} duration={500}>
+          Career
+        </ScrollLink>
+        <ScrollLink to="contact" smooth={true} duration={500}>
+          Contact Us
+        </ScrollLink>
         </NavLinks>
       </NavContainer>
 

@@ -1,72 +1,126 @@
-// Footer.jsx
+/* eslint-disable @next/next/no-img-element */
+
 import React from 'react';
 import styled from 'styled-components';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
-import { Heading, SubHeading, Paragraph } from '../theme/TextComponent';
+import {   Paragraph } from '../theme/TextComponent';
 import theme from '../theme/theme';
 
-// Styled Components
+import { Link as ScrollLink } from 'react-scroll'; 
+
+
 const FooterWrapper = styled.footer`
   background-color: ${theme.colors.dark};
   padding: 3rem 1rem;
   color: ${theme.colors.light};
+
+  flex-direction: column;
+ 
 `;
 
-const FooterGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+const LogoWrapper = styled.div`
+ 
+   img {
+    width: 200px;
+    height: 100px;
+    margin-right: 10px;
+  
+  }
 `;
+
+
+
+
+
+const FooterLinks = styled.div`
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  align-items: center;
+  margin-left: 20%;
+  
+  
+ 
+
+  a {
+    color: ${theme.colors.light};
+    text-decoration: none;
+    font-family: ${theme.typography.fontFamily};
+    align-items:flex-end ;
+    text-align: center;
+    justify-content: center;
+
+    &:hover {
+      color: ${theme.colors.accent};
+    }
+  }
+
+  span {
+    color: ${theme.colors.light};
+  }
+`;
+
+
 
 const SocialIcons = styled.div`
   display: flex;
   gap: 1rem;
-  margin-top: 1rem;
-`;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  margin-left: 50%;
+  a {
+    color: ${theme.colors.light};
+    border: 1px solid ${theme.colors.light};
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: color 0.3s ease, border-color 0.3s ease;
 
-const FooterLink = styled.a`
-  text-decoration: none;
-  color: ${theme.colors.light};
-  margin-bottom: 0.5rem;
-  font-family: ${theme.typography.fontFamily};
-  &:hover {
-    color: ${theme.colors.accent};
+    
+  }
+
+  svg {
+    font-size: 1.5rem; 
   }
 `;
 
-// Footer Component
+const Copyright = styled.div`
+  font-size: 0.8rem;
+  color: ${theme.colors.light};
+  text-align: center;
+ 
+ 
+`;
+const FooterContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+`;
+
+
+
 const Footer = () => (
   <FooterWrapper>
-    <FooterGrid>
-      {/* Company Description */}
-      <div>
-        <Heading style={{ color: theme.colors.light }}>Kriotek</Heading>
-        <Paragraph>
+     <LogoWrapper>
+     
+     <img src="/footerimg.jpg" alt="Kriotek Logo" /> 
+   
+     </LogoWrapper>
+     <FooterContent>
+                 
+      <Paragraph>
           We build creative and modern solutions to help you grow.
-        </Paragraph>
-      </div>
-
-      {/* Company Links */}
-      <div>
-        <SubHeading style={{ color: theme.colors.light }}>Company</SubHeading>
-        <FooterLink href="#">About Us</FooterLink>
-        <FooterLink href="#">Services</FooterLink>
-        <FooterLink href="#">Contact</FooterLink>
-      </div>
-
-      {/* Resources Links */}
-      <div>
-        <SubHeading style={{ color: theme.colors.light }}>Resources</SubHeading>
-        <FooterLink href="#">Blog</FooterLink>
-        <FooterLink href="#">FAQ</FooterLink>
-        <FooterLink href="#">Terms & Conditions</FooterLink>
-      </div>
-
-      {/* Social Media Section */}
-      <div>
-        <SubHeading style={{ color: theme.colors.light }}>Follow Us</SubHeading>
-        <SocialIcons>
-          <a href="#">
+                </Paragraph>
+               
+        
+      <SocialIcons>
+                 <a href="#">
             <Facebook style={{ color: theme.colors.light }} />
           </a>
           <a href="#">
@@ -79,10 +133,50 @@ const Footer = () => (
             <LinkedIn style={{ color: theme.colors.light }} />
           </a>
         </SocialIcons>
-        <Paragraph>© 2024 Kriotek. All rights reserved.</Paragraph>
-      </div>
-    </FooterGrid>
-  </FooterWrapper>
+        </FooterContent>
+       
+             <hr />
+       
+        <FooterLinks>
+        <ScrollLink to="hero" smooth={true} duration={500}>
+          Home
+        </ScrollLink>
+        <ScrollLink to="about" smooth={true} duration={500}>
+          About Us
+        </ScrollLink>
+        <ScrollLink to="services" smooth={true} duration={500}>
+          Our Services
+        </ScrollLink>
+        <ScrollLink to="portfolio2" smooth={true} duration={500}>
+          Portfolio
+        </ScrollLink>
+        <ScrollLink to="career" smooth={true} duration={500}>
+          Career
+        </ScrollLink>
+        <ScrollLink to="contact" smooth={true} duration={500}>
+          Contact Us
+        </ScrollLink>
+      <br />
+      <br />
+      <a href="#">Privacy policy</a>
+      <span>|</span>
+      <a href="#">Terms & condition</a>
+      <br />
+      <br />
+      <br />
+      <Copyright>© 2024 Kriotek. All rights reserved.</Copyright>
+      </FooterLinks>
+     
+    
+
+     
+
+    
+       
+       
+        
+       
+         </FooterWrapper>
 );
 
 export default Footer;

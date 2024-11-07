@@ -1,13 +1,13 @@
-import React from 'react';
+
 import styled from 'styled-components';
 import theme from '../theme/theme';
 
 const StyledButton = styled.button`
   background-color: ${theme.colors.accent};
   color: ${theme.colors.light};
-  padding: 10px 20px;
+  padding: 16px 32px;
   border: none;
-  border-radius: 20px;
+  border-radius: 50px;
   font-size: ${theme.typography.fontSizes.small};
   font-weight: ${theme.typography.fontWeights.bold};
   font-family: ${theme.typography.fontFamily};

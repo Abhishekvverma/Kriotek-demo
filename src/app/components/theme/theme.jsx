@@ -2,11 +2,11 @@
 const theme = {
     colors: {
       primary: "#6D5DFE", // Primary purple color
-      secondary: "#E6E6E6", // Light gray for background
-      dark: "#1B1B1B", // Dark color for footer
+      secondary: "#faf9fa", // Light gray for background
+      dark: "#000000", // Dark color for footer
       light: "#FFFFFF", // White for card backgrounds
-      accent: "#FE5D5D", // Red accent color for buttons or hover states
-      accent2 : "#b61d1d",
+      accent: "#a48ea6", // Red accent color for buttons or hover states
+      accent2 : "#99849b",
       textPrimary: "#000000", // Black for primary text
       textSecondary: "#6C6C6C", // Gray for secondary text
     },
