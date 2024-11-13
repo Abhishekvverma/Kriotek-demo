@@ -1,11 +1,11 @@
 
 import styled from 'styled-components';
-import theme from '../theme/theme';
+import theme from '../../theme/theme';
 
 const StyledButton = styled.button`
   background-color: ${theme.colors.accent};
   color: ${theme.colors.light};
-  padding: 16px 32px;
+  padding: 12px 32px;
   border: none;
   border-radius: 50px;
   font-size: ${theme.typography.fontSizes.small};
